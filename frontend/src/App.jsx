@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import Chat from './components/Chat';
-import UsernameModal from './components/UsernameModal';
+import LoginForm from './components/LoginForm';
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
@@ -75,9 +75,7 @@ function App() {
 
   if (!isAuthenticated) {
     return (
-      <div className="app">
-        <UsernameModal onSubmit={handleUsernameSubmit} />
-      </div>
+      <LoginForm onSubmit={handleUsernameSubmit} />
     );
   }
 
